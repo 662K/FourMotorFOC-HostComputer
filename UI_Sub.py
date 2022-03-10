@@ -190,93 +190,19 @@ class UISub(QMainWindow, Ui_MainWindow):
         self.Poles_spinBox_1.setEnabled(False)
         self.Poles_Calculate_lineEdit_1.setEnabled(False)
 
-        self.IdKp_lineEdit_1.setEnabled(False)
-        self.IdKp_Calculate_lineEdit_1.setEnabled(False)
-
-        self.IdKi_lineEdit_1.setEnabled(False)
-        self.IdKi_Calculate_lineEdit_1.setEnabled(False)
-
-        self.IqKp_lineEdit_1.setEnabled(False)
-        self.IqKp_Calculate_lineEdit_1.setEnabled(False)
-
-        self.IqKi_lineEdit_1.setEnabled(False)
-        self.IqKi_Calculate_lineEdit_1.setEnabled(False)
-
-        self.UdMax_lineEdit_1.setEnabled(False)
-        self.UdMax_Calculate_lineEdit_1.setEnabled(False)
-
-        self.UqMax_lineEdit_1.setEnabled(False)
-        self.UqMax_Calculate_lineEdit_1.setEnabled(False)
-
-        self.SpdKp_lineEdit_1.setEnabled(False)
-        self.SpdKp_Calculate_lineEdit_1.setEnabled(False)
-
-        self.SpdKi_lineEdit_1.setEnabled(False)
-        self.SpdKi_Calculate_lineEdit_1.setEnabled(False)
-
-        self.IqMax_lineEdit_1.setEnabled(False)
-        self.IqMax_Calculate_lineEdit_1.setEnabled(False)
-
-        self.PosKp_lineEdit_1.setEnabled(False)
-        self.PosKp_Calculate_lineEdit_1.setEnabled(False)
-
-        self.PosKi_lineEdit_1.setEnabled(False)
-        self.PosKi_Calculate_lineEdit_1.setEnabled(False)
-
-        self.SpdMax_lineEdit_1.setEnabled(False)
-        self.SpdMax_Calculate_lineEdit_1.setEnabled(False)
-
         self.VolCtrlMode_pushButton_1.setEnabled(False)
         self.CurCtrlMode_pushButton_1.setEnabled(False)
         self.SpdCtrlMode_pushButton_1.setEnabled(False)
         self.PosCtrlMode_pushButton_1.setEnabled(False)
-        self.ParametersRead_pushButton_1.setEnabled(False)
 
     def MotorEnable_Disable_1(self):
         self.Poles_spinBox_1.setEnabled(True)
         self.Poles_Calculate_lineEdit_1.setEnabled(True)
 
-        self.IdKp_lineEdit_1.setEnabled(True)
-        self.IdKp_Calculate_lineEdit_1.setEnabled(True)
-
-        self.IdKi_lineEdit_1.setEnabled(True)
-        self.IdKi_Calculate_lineEdit_1.setEnabled(True)
-
-        self.IqKp_lineEdit_1.setEnabled(True)
-        self.IqKp_Calculate_lineEdit_1.setEnabled(True)
-
-        self.IqKi_lineEdit_1.setEnabled(True)
-        self.IqKi_Calculate_lineEdit_1.setEnabled(True)
-
-        self.UdMax_lineEdit_1.setEnabled(True)
-        self.UdMax_Calculate_lineEdit_1.setEnabled(True)
-
-        self.UqMax_lineEdit_1.setEnabled(True)
-        self.UqMax_Calculate_lineEdit_1.setEnabled(True)
-
-        self.SpdKp_lineEdit_1.setEnabled(True)
-        self.SpdKp_Calculate_lineEdit_1.setEnabled(True)
-
-        self.SpdKi_lineEdit_1.setEnabled(True)
-        self.SpdKi_Calculate_lineEdit_1.setEnabled(True)
-
-        self.IqMax_lineEdit_1.setEnabled(True)
-        self.IqMax_Calculate_lineEdit_1.setEnabled(True)
-
-        self.PosKp_lineEdit_1.setEnabled(True)
-        self.PosKp_Calculate_lineEdit_1.setEnabled(True)
-
-        self.PosKi_lineEdit_1.setEnabled(True)
-        self.PosKi_Calculate_lineEdit_1.setEnabled(True)
-
-        self.SpdMax_lineEdit_1.setEnabled(True)
-        self.SpdMax_Calculate_lineEdit_1.setEnabled(True)
-
         self.VolCtrlMode_pushButton_1.setEnabled(True)
         self.CurCtrlMode_pushButton_1.setEnabled(True)
         self.SpdCtrlMode_pushButton_1.setEnabled(True)
         self.PosCtrlMode_pushButton_1.setEnabled(True)
-        self.ParametersRead_pushButton_1.setEnabled(True)
 
     def ParametersRead_Page1(self):
         # 电机1 模式读取

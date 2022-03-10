@@ -52,6 +52,7 @@ class Tcp_Module:
         self.Tcp_Signal1 = []
         self.Tcp_Signal2 = []
         self.Tcp_Signal3 = []
+        self.Tcp_Signal4 = []
 
         self.Display_Flag = self.None_Display_Flag
 
@@ -70,6 +71,12 @@ class Tcp_Module:
     def Tcp_Disable(self):
         self.tcp_socket.close()
         self.Tcp_recv_Enable = False
+
+    def Tcp_Signal_Clear(self):
+        self.Tcp_Signal1.clear()
+        self.Tcp_Signal2.clear()
+        self.Tcp_Signal3.clear()
+        self.Tcp_Signal4.clear()
 
     def Tcp_recv(self):
         while True:
@@ -133,12 +140,16 @@ class Tcp_Module:
                                 Bytetoint16(self.recv_data[cnt * 8 + 2], self.recv_data[cnt * 8 + 3]))
                             self.Tcp_Signal3.append(
                                 Bytetoint16(self.recv_data[cnt * 8 + 4], self.recv_data[cnt * 8 + 5]))
+                            self.Tcp_Signal4.append(
+                                Bytetoint16(self.recv_data[cnt * 8 + 6], self.recv_data[cnt * 8 + 7]))
                             if len(self.Tcp_Signal1) > self.Save_Num:
                                 del self.Tcp_Signal1[0]
                             if len(self.Tcp_Signal2) > self.Save_Num:
                                 del self.Tcp_Signal2[0]
                             if len(self.Tcp_Signal3) > self.Save_Num:
                                 del self.Tcp_Signal3[0]
+                            if len(self.Tcp_Signal4) > self.Save_Num:
+                                del self.Tcp_Signal4[0]
                     elif self.Display_Flag == self.Pos_Display_Flag:
                         for cnt in range(20):
                             self.Tcp_Signal1.append(

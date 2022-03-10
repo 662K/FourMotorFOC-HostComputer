@@ -21,6 +21,7 @@ class CarWindow(UISub, Tcp_Module):
         self.Signal1_Print = None
         self.Signal2_Print = None
         self.Signal3_Print = None
+        self.Signal4_Print = None
         self.setupUi(self)
         self.addSlot()
         self.addGraph()
@@ -47,6 +48,7 @@ class CarWindow(UISub, Tcp_Module):
             self.Signal1_Print.setData(self.Tcp_Signal1)
             self.Signal2_Print.setData(self.Tcp_Signal2)
             self.Signal3_Print.setData(self.Tcp_Signal3)
+            self.Signal4_Print.setData(self.Tcp_Signal4)
         elif self.Display_Flag == self.Pos_Display_Flag:
             self.Signal1_Print.setData(self.Tcp_Signal1)
             self.Signal2_Print.setData(self.Tcp_Signal2)
@@ -72,7 +74,7 @@ class CarWindow(UISub, Tcp_Module):
 
     def addGraph(self):
         self.pw1 = pg.PlotWidget()
-        self.pw1.setBackground('w')
+        # self.pw1.setBackground('b')
         self.pw1.showGrid(x=True, y=True)
         self.pw1.addLegend()
         layout1 = QGridLayout()
@@ -340,9 +342,7 @@ class CarWindow(UISub, Tcp_Module):
             self.Display_Flag = self.None_Display_Flag
             self.pw1.plot(clear=True)
 
-        self.Tcp_Signal1.clear()
-        self.Tcp_Signal2.clear()
-        self.Tcp_Signal3.clear()
+        self.Tcp_Signal_Clear()
 
     def UqExt_Display(self):
         if self.UqExt_checkBox_1.isChecked():
@@ -359,9 +359,7 @@ class CarWindow(UISub, Tcp_Module):
             self.Display_Flag = self.None_Display_Flag
             self.pw1.plot(clear=True)
 
-        self.Tcp_Signal1.clear()
-        self.Tcp_Signal2.clear()
-        self.Tcp_Signal3.clear()
+        self.Tcp_Signal_Clear()
 
     def IdExt_Display(self):
         if self.IdExt_checkBox_1.isChecked():
@@ -379,9 +377,7 @@ class CarWindow(UISub, Tcp_Module):
             self.Display_Flag = self.None_Display_Flag
             self.pw1.plot(clear=True)
 
-        self.Tcp_Signal1.clear()
-        self.Tcp_Signal2.clear()
-        self.Tcp_Signal3.clear()
+        self.Tcp_Signal_Clear()
 
     def IqExt_Display(self):
         if self.IqExt_checkBox_1.isChecked():
@@ -399,9 +395,7 @@ class CarWindow(UISub, Tcp_Module):
             self.Display_Flag = self.None_Display_Flag
             self.pw1.plot(clear=True)
 
-        self.Tcp_Signal1.clear()
-        self.Tcp_Signal2.clear()
-        self.Tcp_Signal3.clear()
+        self.Tcp_Signal_Clear()
 
     def SpdExt_Display(self):
         if self.SpdExt_checkBox_1.isChecked():
@@ -412,16 +406,15 @@ class CarWindow(UISub, Tcp_Module):
 
             self.Signal1_Print = self.pw1.plot([0], pen=pg.mkPen('r'), name='PresentSpd', clear=True)
             self.Signal2_Print = self.pw1.plot([0], pen=pg.mkPen('g'), name='TargetSpd')
-            self.Signal3_Print = self.pw1.plot([0], pen=pg.mkPen('b'), name='Spd_Ext')
+            self.Signal3_Print = self.pw1.plot([0], pen=pg.mkPen('b'), name='Ia')
+            self.Signal4_Print = self.pw1.plot([0], pen=pg.mkPen('y'), name='Ic')
         else:
             self.Display_Close_Sub()
             self.UartWrite_int16(self.Display_Addr[0], self.None_Display_Flag)
             self.Display_Flag = self.None_Display_Flag
             self.pw1.plot(clear=True)
 
-        self.Tcp_Signal1.clear()
-        self.Tcp_Signal2.clear()
-        self.Tcp_Signal3.clear()
+        self.Tcp_Signal_Clear()
 
     def Pos_Display(self):
         if self.Pos_checkBox_1.isChecked():
@@ -438,9 +431,7 @@ class CarWindow(UISub, Tcp_Module):
             self.Display_Flag = self.None_Display_Flag
             self.pw1.plot(clear=True)
 
-        self.Tcp_Signal1.clear()
-        self.Tcp_Signal2.clear()
-        self.Tcp_Signal3.clear()
+        self.Tcp_Signal_Clear()
 
     def Theta_Display(self):
         if self.Theta_checkBox_1.isChecked():
@@ -457,9 +448,7 @@ class CarWindow(UISub, Tcp_Module):
             self.Display_Flag = self.None_Display_Flag
             self.pw1.plot(clear=True)
 
-        self.Tcp_Signal1.clear()
-        self.Tcp_Signal2.clear()
-        self.Tcp_Signal3.clear()
+        self.Tcp_Signal_Clear()
 
     def SinCosTheta_Display(self):
         if self.SinCosTheta_checkBox_1.isChecked():
@@ -476,9 +465,7 @@ class CarWindow(UISub, Tcp_Module):
             self.Display_Flag = self.None_Display_Flag
             self.pw1.plot(clear=True)
 
-        self.Tcp_Signal1.clear()
-        self.Tcp_Signal2.clear()
-        self.Tcp_Signal3.clear()
+        self.Tcp_Signal_Clear()
 
     def Iabc_Display(self):
         if self.Iabc_checkBox_1.isChecked():
@@ -495,9 +482,7 @@ class CarWindow(UISub, Tcp_Module):
             self.Display_Flag = self.None_Display_Flag
             self.pw1.plot(clear=True)
 
-        self.Tcp_Signal1.clear()
-        self.Tcp_Signal2.clear()
-        self.Tcp_Signal3.clear()
+        self.Tcp_Signal_Clear()
 
     def Uabc_Display(self):
         if self.Uabc_checkBox_1.isChecked():
@@ -515,9 +500,7 @@ class CarWindow(UISub, Tcp_Module):
             self.Display_Flag = self.None_Display_Flag
             self.pw1.plot(clear=True)
 
-        self.Tcp_Signal1.clear()
-        self.Tcp_Signal2.clear()
-        self.Tcp_Signal3.clear()
+        self.Tcp_Signal_Clear()
 
     def Ixy_Display(self):
         if self.Ixy_checkBox_1.isChecked():
@@ -534,9 +517,7 @@ class CarWindow(UISub, Tcp_Module):
             self.Display_Flag = self.None_Display_Flag
             self.pw1.plot(clear=True)
 
-        self.Tcp_Signal1.clear()
-        self.Tcp_Signal2.clear()
-        self.Tcp_Signal3.clear()
+        self.Tcp_Signal_Clear()
 
     def Uxy_Display(self):
         if self.Uxy_checkBox_1.isChecked():
@@ -553,9 +534,7 @@ class CarWindow(UISub, Tcp_Module):
             self.Display_Flag = self.None_Display_Flag
             self.pw1.plot(clear=True)
 
-        self.Tcp_Signal1.clear()
-        self.Tcp_Signal2.clear()
-        self.Tcp_Signal3.clear()
+        self.Tcp_Signal_Clear()
 
     def MotorEnable1(self):
         if self.MotorEnable_pushButton_1.isChecked():
